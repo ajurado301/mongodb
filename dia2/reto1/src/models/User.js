@@ -22,8 +22,6 @@ const userSchema = new Schema({
 userSchema.pre('save', function(next) {
     // Expresión regular para contraseñas robustas
     let reEx = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,}$/;
-    console.log(this.password);
-    console.log(reEx.test(this.password));
     if (reEx.test(this.password)) {
         next()
     }else {
