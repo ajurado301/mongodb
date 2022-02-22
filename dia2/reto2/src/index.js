@@ -10,24 +10,24 @@ const Photo = require('./models/Photo');
 //     { user_name: 'Ander', url_foto: './fotoperfilander.png', titulo: 'Foto perfil Ander', descripcion: 'url de ejemplo' },
 //     { user_name: 'Ander', url_foto: './foto1nder.png', titulo: 'Foto 1 Ander', descripcion: 'url de ejemplo' },
 //     { user_name: 'Ander', url_foto: './foto2ander.png', titulo: 'Foto 2 Ander', descripcion: 'url de ejemplo' },
-//     { user_name: 'Juan Jose', url_foto: './fotoperfiljuan Jose.png', titulo: 'Foto perfil Juan Jose', descripcion: 'url de ejemplo' },
-//     { user_name: 'Juan Jose', url_foto: './foto 1 juan Jose.png', titulo: 'Foto 1 Juan Jose', descripcion: 'url de ejemplo' },
-//     { user_name: 'Juan Jose', url_foto: './foto 2 juan Jose.png', titulo: 'Foto 2 Juan Jose', descripcion: 'url de ejemplo' },
+//     { user_name: 'Juan Jose', url_foto: './fotoperfiljuanjose.png', titulo: 'Foto perfil Juan Jose', descripcion: 'url de ejemplo' },
+//     { user_name: 'Juan Jose', url_foto: './foto1juanjose.png', titulo: 'Foto 1 Juan Jose', descripcion: 'url de ejemplo' },
+//     { user_name: 'Juan Jose', url_foto: './foto2juanjose.png', titulo: 'Foto 2 Juan Jose', descripcion: 'url de ejemplo' },
 //     { user_name: 'Edgar', url_foto: './fotoperfiledgar.png', titulo: 'Foto perfil Edgar', descripcion: 'url de ejemplo' },
-//     { user_name: 'Edgar', url_foto: './foto 1 edgar.png', titulo: 'Foto 1 Edgar', descripcion: 'url de ejemplo' },
-//     { user_name: 'Edgar', url_foto: './foto 2 edgar.png', titulo: 'Foto 2 Edgar', descripcion: 'url de ejemplo' },
+//     { user_name: 'Edgar', url_foto: './foto1edgar.png', titulo: 'Foto 1 Edgar', descripcion: 'url de ejemplo' },
+//     { user_name: 'Edgar', url_foto: './foto2edgar.png', titulo: 'Foto 2 Edgar', descripcion: 'url de ejemplo' },
 //     { user_name: 'Jose', url_foto: './fotoperfiljose.png', titulo: 'Foto perfil Jose', descripcion: 'url de ejemplo' },
-//     { user_name: 'Jose', url_foto: './foto 1 jose.png', titulo: 'Foto 1 Jose', descripcion: 'url de ejemplo' },
-//     { user_name: 'Jose', url_foto: './foto 2 jose.png', titulo: 'Foto 2 Jose', descripcion: 'url de ejemplo' },
+//     { user_name: 'Jose', url_foto: './foto1jose.png', titulo: 'Foto 1 Jose', descripcion: 'url de ejemplo' },
+//     { user_name: 'Jose', url_foto: './foto2jose.png', titulo: 'Foto 2 Jose', descripcion: 'url de ejemplo' },
 //     { user_name: 'Pascual', url_foto: './fotoperfilpascual.png', titulo: 'Foto perfil Pascual', descripcion: 'url de ejemplo' },
-//     { user_name: 'Pascual', url_foto: './foto 1 pascual.png', titulo: 'Foto 1 Pascual', descripcion: 'url de ejemplo' },
-//     { user_name: 'Pascual', url_foto: './foto 2 pascual.png', titulo: 'Foto 2 Pascual', descripcion: 'url de ejemplo' },
+//     { user_name: 'Pascual', url_foto: './foto1pascual.png', titulo: 'Foto 1 Pascual', descripcion: 'url de ejemplo' },
+//     { user_name: 'Pascual', url_foto: './foto2pascual.png', titulo: 'Foto 2 Pascual', descripcion: 'url de ejemplo' },
 //     { user_name: 'Pedro', url_foto: './fotoperfilPedro.png', titulo: 'Foto perfil Pedro', descripcion: 'url de ejemplo' },
-//     { user_name: 'Pedro', url_foto: './foto 1 Pedro.png', titulo: 'Foto 1 Pedro', descripcion: 'url de ejemplo' },
-//     { user_name: 'Pedro', url_foto: './foto 2 Pedro.png', titulo: 'Foto 2 Pedro', descripcion: 'url de ejemplo' },
+//     { user_name: 'Pedro', url_foto: './foto1Pedro.png', titulo: 'Foto 1 Pedro', descripcion: 'url de ejemplo' },
+//     { user_name: 'Pedro', url_foto: './foto2Pedro.png', titulo: 'Foto 2 Pedro', descripcion: 'url de ejemplo' },
 //     { user_name: 'Jose Antonio', url_foto: './fotoperfiljoseantonio.png', titulo: 'Foto perfil Jose Antonio', descripcion: 'url de ejemplo' },
-//     { user_name: 'Jose Antonio', url_foto: './foto 1 joseantonio.png', titulo: 'Foto 1 Jose Antonio', descripcion: 'url de ejemplo' },
-//     { user_name: 'Jose Antonio', url_foto: './foto 2 joseantonio.png', titulo: 'Foto 2 Jose Antonio', descripcion: 'url de ejemplo' }
+//     { user_name: 'Jose Antonio', url_foto: './foto1joseantonio.png', titulo: 'Foto 1 Jose Antonio', descripcion: 'url de ejemplo' },
+//     { user_name: 'Jose Antonio', url_foto: './foto2joseantonio.png', titulo: 'Foto 2 Jose Antonio', descripcion: 'url de ejemplo' }
 // ])
 // .then((resp) => {
 //     console.log('Documentos insertados correctamente');
@@ -76,7 +76,7 @@ const Photo = require('./models/Photo');
 //     console.log(err.message);
 // })
 
-// Borrar todos los docuemntos de la colección Photos
+// // Borrar todos los documentos de la colección Photos
 // Photo.deleteMany({})
 // .then((resp) => {
 //     console.log('Documentos borrados correctamente');
@@ -86,7 +86,7 @@ const Photo = require('./models/Photo');
 //     console.log(err.message);
 // })
 
-// Borrar todos los docuemntos de la colección Users
+// // Borrar todos los documentos de la colección Users
 // User.deleteMany({})
 // .then((resp) => {
 //     console.log('Documentos borrados correctamente');
