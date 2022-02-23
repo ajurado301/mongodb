@@ -32,7 +32,7 @@ const Coche = require('./models/Coche');
 //     console.log(err)
 // })
 
-// // Buscar por ejemplo 3 coches por sus matrículas y si encuentra algo actualizar los coches de una persona por su nombre y mostrarlos
+// // Buscar por ejemplo 3 coches por sus matrículas y si encuentra algo actualizar los coches de una persona buscada por su nombre y mostrarlos
 // let matriculas = [{ matricula: '2635DFK' }, { matricula: '8347CTD' }, { matricula: '7230BTK' }];
 // Coche.find({ $or: matriculas }, { _id: 1 })
 // .then((resp) => {
