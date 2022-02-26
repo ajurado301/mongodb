@@ -33,11 +33,15 @@ const postActor = (req, res) => {
         .then((resp) => {
             if (resp) {
                 let actors = resp.actors;
-                actors.push(name);
-                Pelicula.findByIdAndUpdate(id, {actors: actors})
-                .then((resp) => {
-                    return res.status(200).json({ ok: true, message: 'Actor agregado correctamente' })
-                })
+                if (actors.includes(name)) {
+                    return res.status(200).json({ ok: false, message: 'Actor ya existe' })
+                } else {
+                    actors.push(name);
+                    Pelicula.findByIdAndUpdate(id, {actors: actors})
+                    .then((resp) => {
+                        return res.status(200).json({ ok: true, message: 'Actor agregado correctamente' })
+                    })
+                };
             } else {
                 return res.status(200).json({ ok: false, message: 'Película no encontrada' })
             }

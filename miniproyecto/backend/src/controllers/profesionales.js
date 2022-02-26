@@ -32,9 +32,9 @@ const getProfesional = (req, res) => {
                 
 // POST                
 const postProfesional = (req, res) => {
-    Profesional.create(req.body)    
+    Profesional.create(req.body,)    
     .then((resp) => {
-        return res.status(200).json({ ok: true, message: 'Profesional agregado correctamente' })
+        return res.status(200).json({ ok: true, message: 'Profesional agregado correctamente', respuesta: {id: resp._id} })
     })
     .catch((err) => {
         return res.status(400).json({ ok: false, message: 'Error al leer/grabar datos en la bbdd', error: err })

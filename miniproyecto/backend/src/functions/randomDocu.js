@@ -17,7 +17,7 @@ function randomProfesional() {
         nationality: fakerator.random.arrayElement(['Inglesa', 'Estadounidense', 'Española', 'Francesa', 'Alemana']),
         oscarsNumber: fakerator.random.number(0, 5),
         profession: fakerator.random.arrayElement(['Actor', 'Director', 'Guionista']),
-        url_foto: 'https://picsum.photos/200/300'
+        url_foto: 'https://picsum.photos/100/150'
     }
 }
 

@@ -20,8 +20,11 @@ th, tr {
 }
 
 /* Estilos propios */
+.fila-resultados {
+    font-size: 12px;
+}
 .fila-resultados:hover {
-    background-color: rgb(232, 246, 255);
+    background-color: rgb(240, 240, 240);
 }
 
 /* Bootstrap modificados */
@@ -35,6 +38,14 @@ th, tr {
 
 .bg-danger {
     background-color: rgb(245, 80, 80)!important;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0px 0px 6px 6px;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: white;
 }
 
 /* En contexto lg quitamos el padding top/bottom de los links para que la barra de navegación no tenga tanta altura */

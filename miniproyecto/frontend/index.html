@@ -13,6 +13,11 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- javascript propio -->
+    <script src="./classes/profesional.js"></script>
+    <script src="./classes/pelicula.js"></script>
+    <script src="./controllers/profesionales.js"></script>
+    <script src="./controllers/peliculas.js"></script>
+    <script src="./controllers/adicionales.js"></script>
     <script src="./scripts/index.js"></script>
     <title>IMB API REST</title>
 </head>
@@ -94,7 +99,7 @@
                                 <input id="nacionalidad-profesional" type="text" class="form-control form-control-sm"
                                     placeholder="Introduzca nacionalidad...">
                             </div>
-                            <div class="input-group input-group-sm mb-3">
+                            <div class="input-group input-group-sm">
                                 <span class="input-group-text w-25">Nº de oscars</span>
                                 <input id="oscars-profesional" type="number" class="form-control form-control-sm"
                                     placeholder="Introduzca número de oscars...">
@@ -120,8 +125,8 @@
                                 </div>
                                 <div class="col-6 align-self-center">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="profesional-retirado">
-                                        <label class="form-check-label" for="exampleCheck1">Está retirado</label>
+                                        <input type="checkbox" class="form-check-input" id="retirado-profesional">
+                                        <label class="form-check-label" for="retirado-profesional">Está retirado</label>
                                     </div>
                                 </div>
                             </div>
@@ -146,11 +151,15 @@
                                     </select>
                                 </div>
                             </div>
-
+                            <div class="input-group input-group-sm mt-3">
+                                <span class="input-group-text w-25">URL foto</span>
+                                <input id="url-profesional" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca la url de la foto...">
+                            </div>
                             <div class="input-group input-group-sm my-3">
                                 <span class="input-group-text w-25">Id profesional</span>
-                                <input id="nacionalidad-profesional" type="text" class="form-control form-control-sm"
-                                    placeholder="Introduzca id del profesional...">
+                                <input id="id-profesional" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca el id del profesional...">
                             </div>
 
                         </div>
@@ -158,8 +167,6 @@
 
                     </div>
 
-
-                    <!-- <input type="text" class="form-control form-control-sm my-2" id="id" placeholder="id profesional"> -->
                     <div class="row d-flex justify-content-between">
                         <div class="col-12 col-lg-2 mb-2 mb-lg-0">
                             <button type="button" class="btn btn-primary btn-sm w-100"
@@ -190,27 +197,151 @@
                 <h5 class="py-2 border-bottom border-1">Formulario de peliculas</h5>
                 <form id="peliculas-form">
 
-                    <!-- <input type="text" class="form-control form-control-sm my-2" id="id" placeholder="id profesional"> -->
+                    <div class="row">
+
+                        <div class="col-12 col-lg-6">
+
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text w-25">*Título</span>
+                                <input id="titulo-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca el título...">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text w-25">Año</span>
+                                <input id="anio-pelicula" type="number" class="form-control form-control-sm"
+                                    placeholder="Introduzca el año de lanzamiento...">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text w-25">*Nacionalidad</span>
+                                <input id="nacionalidad-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca la nacionalidad...">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text w-25">Idioma</span>
+                                <input id="idioma-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca el idioma...">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text w-25">Plataforma</span>
+                                <input id="plataforma-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca la plataforma...">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text w-25">Personaje</span>
+                                <input id="personaje-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca el personaje principal...">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text w-25">*Distribuidora</span>
+                                <input id="distribuidora-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca la distribuidora...">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text w-25">*Productora</span>
+                                <input id="productora-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca la productora...">
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="input-group input-group-sm mb-1">
+                                        <span class="input-group-text w-25">Nombre</span>
+                                        <input id="nombre-pelicula" type="text" class="form-control form-control-sm"
+                                            placeholder="Introduzca el nombre de un profesional...">
+                                    </div>
+                                </div>
+
+                                <div class="col-2 pe-0">
+                                    <button type="button" class="btn btn-primary btn-sm w-100"
+                                        id="btn-agregar-actor">Act+</button>
+                                </div>
+                                <div class="col-2 pe-0">
+                                    <button type="button" class="btn btn-danger btn-sm w-100"
+                                        id="btn-quitar-actor">Act-</button>
+                                </div>
+                                <div class="col-2 pe-0">
+                                    <button type="button" class="btn btn-primary btn-sm w-100"
+                                        id="btn-agregar-director">Dir+</button>
+                                </div>
+                                <div class="col-2 pe-0">
+                                    <button type="button" class="btn btn-danger btn-sm w-100"
+                                        id="btn-quitar-director">Dir-</button>
+                                </div>
+                                <div class="col-2 pe-0">
+                                    <button type="button" class="btn btn-primary btn-sm w-100"
+                                        id="btn-agregar-guionista">Gui+</button>
+                                </div>
+                                <div class="col-2 pe-0">
+                                    <button type="button" class="btn btn-danger btn-sm w-100"
+                                        id="btn-quitar-guionista">Gui-</button>
+                                </div>
+
+
+                                <div class="col-4 pe-0">
+                                    <textarea class="form-control my-2" rows="5" id="actores-pelicula"
+                                        readonly></textarea>
+                                </div>
+                                <div class="col-4 pe-0">
+                                    <textarea class="form-control my-2" rows="5" id="directores-pelicula"
+                                        readonly></textarea>
+                                </div>
+                                <div class="col-4 pe-0">
+                                    <textarea class="form-control my-2" rows="5" id="guionistas-pelicula"
+                                        readonly></textarea>
+                                </div>
+                            </div>
+
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text w-25">Género</span>
+                                <input id="genero-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca el género...">
+                            </div>
+
+
+                            <div class="form-check my-2">
+                                <input type="checkbox" class="form-check-input" id="ismcu-pelicula">
+                                <label class="form-check-label" for="ismcu-pelicula">Universo Marvel</label>
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text w-25">URL foto</span>
+                                <input id="url-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca la url de la foto...">
+                            </div>
+                            <div class="input-group input-group-sm my-3">
+                                <span class="input-group-text w-25">Id pelicula</span>
+                                <input id="id-pelicula" type="text" class="form-control form-control-sm"
+                                    placeholder="Introduzca el id de la película...">
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
                     <div class="row d-flex justify-content-between">
                         <div class="col-12 col-lg-2 mb-2 mb-lg-0">
                             <button type="button" class="btn btn-primary btn-sm w-100"
-                                id="mostrar-profesional">Mostrar</button>
+                                id="mostrar-pelicula">Mostrar</button>
                         </div>
                         <div class="col-12 col-lg-2 mb-2 mb-lg-0">
                             <button type="button" class="btn btn-primary btn-sm w-100"
-                                id="crear-profesional">Crear</button>
+                                id="crear-pelicula">Crear</button>
                         </div>
                         <div class="col-12 col-lg-2 mb-2 mb-lg-0">
                             <button type="button" class="btn btn-primary btn-sm w-100"
-                                id="modificar-profesional">Modificar</button>
+                                id="modificar-pelicula">Modificar</button>
                         </div>
                         <dic class="col-12 col-lg-2 mb-2 mb-lg-0">
                             <button type="button" class="btn btn-primary btn-sm w-100"
-                                id="eliminar-profesional">Eliminar</button>
+                                id="eliminar-pelicula">Eliminar</button>
                         </dic>
                         <div class="col-12 col-lg-2 mb-2 mb-lg-0">
                             <button type="button" class="btn btn-warning btn-sm w-100"
-                                id="reiniciar-profesional">Reiniciar</button>
+                                id="reiniciar-pelicula">Reiniciar</button>
                         </div>
                     </div>
 
@@ -219,7 +350,7 @@
 
             <section class="col-12">
                 <h5 class="border-bottom border-1 py-2">Tabla de resultados</h5>
-                <div id="tabla-resultados"></div>
+                <div id="tabla-resultados" class="row"></div>
             </section>
 
         </div>

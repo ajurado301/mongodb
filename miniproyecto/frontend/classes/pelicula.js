@@ -15,6 +15,7 @@ class Pelicula {
         this.actors = [];
         this.directors = [];
         this.writers = [];
+        this.url_foto = null
     } 
 }
-exports.Movie = Pelicula;
+

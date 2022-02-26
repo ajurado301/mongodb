@@ -9,7 +9,7 @@ const getPelicula = (req, res) => {
         Pelicula.findById(id)
         .then((resp) => {
             if (resp) {
-                return res.status(200).json({ ok: true, message: 'Película cargado', respuesta: resp })
+                return res.status(200).json({ ok: true, message: 'Película cargada', respuesta: resp })
             } else {
                 return res.status(200).json({ ok: false, message: 'Película no encontrada' })
             }
@@ -34,7 +34,7 @@ const getPelicula = (req, res) => {
 const postPelicula = (req, res) => {
     Pelicula.create(req.body)    
     .then((resp) => {
-        return res.status(200).json({ ok: true, message: 'Película agregada correctamente' })
+        return res.status(200).json({ ok: true, message: 'Película agregada correctamente', respuesta: {id: resp._id} })
     })
     .catch((err) => {
         return res.status(400).json({ ok: false, message: 'Error al leer/grabar datos en la bbdd', error: err })

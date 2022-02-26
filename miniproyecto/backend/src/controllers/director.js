@@ -33,11 +33,15 @@ const postDirector = (req, res) => {
         .then((resp) => {
             if (resp) {
                 let directors = resp.directors;
-                directors.push(name);
-                Pelicula.findByIdAndUpdate(id, {directors: directors})
-                .then((resp) => {
-                    return res.status(200).json({ ok: true, message: 'Director agregado correctamente' })
-                })
+                if (directors.includes(name)) {
+                    return res.status(200).json({ ok: false, message: 'Director ya existe' })
+                } else {
+                    directors.push(name);
+                    Pelicula.findByIdAndUpdate(id, {directors: directors})
+                    .then((resp) => {
+                        return res.status(200).json({ ok: true, message: 'Director agregado correctamente' })
+                    })
+                };
             } else {
                 return res.status(200).json({ ok: false, message: 'Película no encontrada' })
             }

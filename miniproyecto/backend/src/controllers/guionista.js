@@ -33,11 +33,20 @@ const postGuionista = (req, res) => {
         .then((resp) => {
             if (resp) {
                 let writers = resp.writers;
-                writers.push(name);
-                Pelicula.findByIdAndUpdate(id, {writers: writers})
-                .then((resp) => {
-                    return res.status(200).json({ ok: true, message: 'Guionista agregado correctamente' })
-                })
+                if (writers.includes(name)) {
+                    return res.status(200).json({ ok: false, message: 'Guionista ya existe' })
+                } else {
+                    writers.push(name);
+                    Pelicula.findByIdAndUpdate(id, {writers: writers})
+                    .then((resp) => {
+                        return res.status(200).json({ ok: true, message: 'Guionista agregado correctamente' })
+                    })
+                };
+                // writers.push(name);
+                // Pelicula.findByIdAndUpdate(id, {writers: writers})
+                // .then((resp) => {
+                //     return res.status(200).json({ ok: true, message: 'Guionista agregado correctamente' })
+                // })
             } else {
                 return res.status(200).json({ ok: false, message: 'Película no encontrada' })
             }

@@ -1,5 +1,5 @@
 // Clase Professional
-class Professional {
+class Profesional {
     // Constructor
     constructor() {
         this.name = null;
@@ -14,6 +14,6 @@ class Professional {
         this.nationality = null;
         this.oscarsNumber = null;
         this.profession = null;
+        this.url_foto = null
     }
 }
-exports.Professional = Professional;
